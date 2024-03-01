@@ -428,7 +428,7 @@ export default function Home() {
         </footer>
         <hr className="my-2 h-2" />
         <p className="text-center mb-10">
-          Copyright @ 2024 Nikhil Dev A S | Web Design by Nikhil Dev A S
+        Copyright @ 2024 | Web Design by Swathy Krishna and team
         </p>
       </main>
       {showModal && <DonorModal setModal={setModal} />}
