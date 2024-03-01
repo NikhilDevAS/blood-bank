@@ -2,32 +2,84 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+header {
+  @apply sticky top-0 z-[100] bg-white;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+nav {
+  @apply flex items-center justify-between px-[300px] py-5 shadow-md;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+nav ul {
+  @apply flex items-center justify-between gap-10;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+nav ul li {
+  @apply cursor-pointer;
+}
+
+nav ul li:hover {
+  @apply text-red-700;
+}
+nav ul li button {
+  @apply bg-red-700 py-2 px-10 text-white rounded-md shadow-md;
+}
+
+main .first-section {
+  @apply flex items-center justify-between;
+}
+
+main .first-section .main-img-container {
+  @apply w-full min-h-[90vh];
+}
+
+main .first-section .main-content-container {
+  @apply w-full min-h-[90vh] flex flex-col justify-center pl-10 pr-[300px];
+}
+
+main .first-section .main-content-container h1 {
+  @apply text-7xl font-bold;
+}
+
+.second-section {
+  @apply px-[300px] py-10 flex flex-col items-center min-h-[50vh] justify-center;
+}
+
+.third-section {
+  @apply px-[300px] flex items-center justify-center min-h-[70vh];
+}
+
+.fourth-section {
+  @apply px-[300px] flex items-center justify-center min-h-[70vh] mt-10;
+}
+
+footer {
+  @apply px-[300px] grid grid-cols-4 gap-20 py-10 pt-[50px];
+}
+
+/* Admin Style */
+
+.top-bar {
+  @apply w-full bg-white shadow-md flex items-center justify-between px-20 py-5 fixed;
+}
+
+.side-bar {
+  @apply w-[300px] bg-white shadow-md min-h-[100vh] fixed top-20;
+}
+
+.side-bar .short-links {
+  @apply w-full border-b border-b-red-700 hover:bg-red-700 hover:text-white duration-500 cursor-pointer
+  py-3 px-20 text-lg flex items-center gap-x-2;
+}
+
+table {
+  @apply min-w-full leading-normal;
+}
+
+table th {
+  @apply px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider text-center;
+}
+
+table td {
+  @apply px-5 py-5 border-b border-gray-200 bg-white text-sm text-center;
 }
